@@ -52,48 +52,45 @@
  
 <script>
 import axios from 'axios'
-import { mapGetters,mapMutations,mapActions} from 'vuex'
+import {mapGetters, mapMutations} from 'vuex'
 import order from '@/components/common/order'
 export default {
   name: 'Pos',
-  data(){
-    return{
-        oftenGoods:[]
-    }   
+  data () {
+    return {
+      oftenGoods: []
+    }
   },
-   components:{
+  components: {
     order
   },
   computed: {
     ...mapGetters([
-      'type0Goods','type1Goods'
+      'type0Goods', 'type1Goods'
     ])
   },
-  created(){
+  created () {
     // oftengood
     axios.get('http://jspang.com/DemoApi/oftenGoods.php')
-      .then( response=>{
-        console.log(response);
-        console.log(this);
-        this.oftenGoods=response.data;
+      .then(response => {
+        console.log(response)
+        console.log(this)
+        this.oftenGoods = response.data
       })
-      .catch(error=>{
-        console.log(error);
-      });
-   
+      .catch(error => {
+        console.log(error)
+      })
   },
-  mounted(){
-    var orderHeight = document.body.clientHeight;
-    document.getElementById('order-list').style.height=orderHeight+'px';
-    this.$store.dispatch('request');
+  mounted () {
+    var orderHeight = document.body.clientHeight
+    document.getElementById('order-list').style.height = orderHeight + 'px'
+    this.$store.dispatch('request')
   },
-  methods:{
+  methods: {
     ...mapMutations([
-        'addOrderList'
-    ]),
- 
+      'addOrderList'
+    ])
   }
-  
 }
 </script>
 <style slot-scope>

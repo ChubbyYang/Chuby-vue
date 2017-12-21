@@ -28,24 +28,22 @@
         外卖
         </el-tab-pane>
     </el-tabs>
-
 </template>
 
-<script>    
-import { mapGetters,mapMutations} from 'vuex'
+<script>
+import {mapGetters, mapMutations} from 'vuex'
 export default {
-     name: 'order',
-     computed: {
-         ...mapGetters([
-             'tableData'
-         ])
-     },
-     methods: {
-         ...mapMutations([
-             'addOrderList','delSingleGoods'
-         ]),
-
-     }
+  name: 'order',
+  computed: {
+    ...mapGetters([
+      'tableData'
+    ])
+  },
+  methods: {
+    ...mapMutations([
+      'addOrderList', 'delSingleGoods'
+    ])
+  }
 }
 </script>
 

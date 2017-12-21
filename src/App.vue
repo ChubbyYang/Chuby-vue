@@ -13,7 +13,7 @@
 import leftNav from '@/components/common/leftNav'
 export default {
   name: 'app',
-  components:{
+  components: {
     leftNav
   }
 }
@@ -34,6 +34,6 @@ export default {
   background-color: #EFF2F7;
   height:100%;
   overflow: auto;
- 
+  
 }
 </style>

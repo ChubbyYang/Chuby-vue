@@ -1,4 +1,4 @@
-# awesomepos
+# demo
 
 > A Vue.js project
 
